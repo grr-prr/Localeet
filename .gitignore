@@ -1,0 +1,38 @@
+# Build output — every generated artifact in this repo lives under build/
+# (see the Makefile: BUILD_DIR = build, and `make clean` is `rm -rf build`).
+build/
+
+# C++ compilation artifacts, in case anything is ever built outside build/.
+*.o
+*.obj
+*.so
+*.so.*
+*.dylib
+*.dll
+*.a
+*.lib
+*.exe
+
+# Debug info and core dumps.
+*.dSYM/
+*.gch
+*.pch
+core
+core.*
+vgcore.*
+
+# Tooling output (clangd, compile-commands consumers, etc.).
+compile_commands.json
+.cache/
+.clangd/
+
+# Editor and IDE state.
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS-level junk files.
+.DS_Store
+Thumbs.db
