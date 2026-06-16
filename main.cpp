@@ -16,8 +16,7 @@ int main(int argc, char* argv[]) {
   try {
     number = std::stoi(argv[1]);
   } catch (const std::exception&) {
-    std::cerr << "Error: '" << argv[1] << "' is not a valid number"
-              << std::endl;
+    std::cerr << "Error: '" << argv[1] << "' is not a valid number" << std::endl;
     return 1;
   }
 
@@ -49,8 +48,7 @@ int main(int argc, char* argv[]) {
   // pointer we can actually call.
   dlerror();
   // function pointers yuh
-  void (*run_solution)() =
-      reinterpret_cast<void (*)()>(dlsym(handle, "run_solution"));
+  void (*run_solution)() = reinterpret_cast<void (*)()>(dlsym(handle, "run_solution"));
   const char* sym_err = dlerror();
   if (sym_err) {
     std::cerr << "Error: " << sym_err << std::endl;
